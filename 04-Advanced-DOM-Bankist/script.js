@@ -72,3 +72,10 @@ message.style.width = '120%';
 console.log(getComputedStyle(message));
 message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+
+console.log(logo.className);
