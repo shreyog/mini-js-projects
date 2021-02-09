@@ -37,45 +37,56 @@ const header = document.querySelector('.header');
 
 const allSections = document.querySelectorAll('.section');
 
-console.log(allSections);
+// console.log(allSections);
 
 document.getElementById('section--1');
 
 const allButtons = document.getElementsByTagName('button');
 
-console.log(allButtons);
+// console.log(allButtons);
 
-console.log(document.getElementsByClassName('btn'));
+// console.log(document.getElementsByClassName('btn'));
 
 // Creating and inserting elements
-const message = document.createElement('div');
-message.classList.add('cookie-message');
-message.innerHTML =
-  'text <button class="btn btn--close-cookie">Got it!</button>';
+// const message = document.createElement('div');
+// message.classList.add('cookie-message');
+// message.innerHTML =
+//   'text <button class="btn btn--close-cookie">Got it!</button>';
 
 // header.prepend(message);
-header.append(message);
+// header.append(message);
 // header.append(message.cloneNode(true));
 
 // header.before(message);
 // header.after(message);
 
 // Delete elements
-document.querySelector('.btn--close-cookie').addEventListener('click', () => {
-  message.remove();
-});
+// document.querySelector('.btn--close-cookie').addEventListener('click', () => {
+//   message.remove();
+// });
 
 // Style
-message.style.backgroundColor = '#37383d';
-message.style.width = '120%';
+// message.style.backgroundColor = '#37383d';
+// message.style.width = '120%';
 
-console.log(getComputedStyle(message));
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+// console.log(getComputedStyle(message));
+// message.style.height =
+//   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
 
-document.documentElement.style.setProperty('--color-primary', 'orangered');
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
 
-const logo = document.querySelector('.nav__logo');
-console.log(logo.alt);
+// const logo = document.querySelector('.nav__logo');
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
 
-console.log(logo.className);
+btnScrollTo.addEventListener('click', e => {
+  // const s1coords = section1.getBoundingClientRect();
+
+  // old method
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth'
+  // });
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
