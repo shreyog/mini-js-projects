@@ -31,7 +31,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 /////////////
-/////////////
+///////////////////
 
 const header = document.querySelector('.header');
 
@@ -91,6 +91,29 @@ btnScrollTo.addEventListener('click', e => {
   section1.scrollIntoView({ behavior: 'smooth' });
 });
 
+//////////////////////////////////////////////////
+// Page Navigation
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+// Event delegation
+// 1. Add event listener to common parent element
+// 2. Determine what element originated the event
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+  // Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
 // const h1 = document.querySelector('h1');
 
 // h1.addEventListener('mouseenter', (e)=> {
@@ -101,23 +124,25 @@ btnScrollTo.addEventListener('click', e => {
 
 // }
 
-const randomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+// const randomInt = (min, max) =>
+//   Math.floor(Math.random() * (max - min + 1) + min);
 
-const randomColor = () =>
-  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+// const randomColor = () =>
+//   `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
 
-document.querySelector('.nav__link').addEventListener('click', function (e) {
-  console.log('Link');
-  this.style.backgroundColor = randomColor();
-});
+// document.querySelector('.nav__link').addEventListener('click', function (e) {
+//   console.log('Link');
+//   this.style.backgroundColor = randomColor();
+// });
 
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-  console.log('Links');
-  this.style.backgroundColor = randomColor();
-});
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   console.log('Links');
+//   this.style.backgroundColor = randomColor();
+// });
 
-document.querySelector('.nav').addEventListener('click', function (e) {
-  console.log('nav');
-  this.style.backgroundColor = randomColor();
-});
+// document.querySelector('.nav').addEventListener('click', function (e) {
+//   console.log('nav');
+//   this.style.backgroundColor = randomColor();
+// });
+
+/////////////////
