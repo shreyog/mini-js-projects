@@ -146,3 +146,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 // });
 
 /////////////////
+const h1 = document.querySelector('h1');
+console.log(h1.querySelector('.highlight'));
+console.log(h1.childNodes);
+console.log(h1.children);
